@@ -1,5 +1,7 @@
 # Cosmos CMS (Publisher)
 
+[![Build](https://github.com/CosmosSoftware/CDT.Cosmos.Cms.Website/actions/workflows/dotnet.yml/badge.svg)](https://github.com/CosmosSoftware/CDT.Cosmos.Cms.Website/actions/workflows/dotnet.yml)
+
 Each Cosmos CMS website is actually made up of two parts--and two repositories stored in GitHub:
 
 * The "[Editor](https://github.com/CosmosSoftware/Cosmos.Cms)" is the web application used to create content for a website.
