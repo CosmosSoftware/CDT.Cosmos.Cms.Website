@@ -4,7 +4,6 @@ using CDT.Cosmos.Cms.Common.Services.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +13,6 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Linq;
-using System.Security.Authentication;
 
 namespace CDT.Cosmos.Cms.Website
 {
@@ -190,7 +188,6 @@ namespace CDT.Cosmos.Cms.Website
                 .AddNewtonsoftJson(options =>
                     options.SerializerSettings.ContractResolver =
                         new DefaultContractResolver())
-                .SetCompatibilityVersion(CompatibilityVersion.Latest)
                 .AddRazorPagesOptions(options =>
                 {
                     // This section docs are here: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.1&tabs=visual-studio#full

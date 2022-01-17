@@ -7,7 +7,8 @@ namespace CosmosCMS.Publisher.Iden.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
+            builder.ConfigureServices((context, services) =>
+            {
 
                 //
                 // Note, the ApplicationDbContext is already defined in the Startup.cs file

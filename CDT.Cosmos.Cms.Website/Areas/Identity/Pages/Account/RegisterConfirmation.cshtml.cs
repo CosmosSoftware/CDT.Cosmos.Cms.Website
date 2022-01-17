@@ -1,11 +1,11 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CosmosCMS.Publisher.Iden.Areas.Identity.Pages.Account
 {
@@ -45,7 +45,7 @@ namespace CosmosCMS.Publisher.Iden.Areas.Identity.Pages.Account
                 EmailConfirmationUrl = Url.Page(
                     "/Account/ConfirmEmail",
                     null,
-                    new {area = "Identity", userId, code, returnUrl},
+                    new { area = "Identity", userId, code, returnUrl },
                     Request.Scheme);
             }
 

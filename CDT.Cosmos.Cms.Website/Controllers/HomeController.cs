@@ -1,9 +1,7 @@
 ﻿using CDT.Cosmos.Cms.Common.Data;
 using CDT.Cosmos.Cms.Common.Data.Logic;
 using CDT.Cosmos.Cms.Common.Models;
-using CDT.Cosmos.Cms.Common.Services;
 using CDT.Cosmos.Cms.Common.Services.Configurations;
-using CDT.Cosmos.Cms.Website.Models;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -58,9 +56,22 @@ namespace CDT.Cosmos.Cms.Website.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index(string id, string lang = "en")
         {
+            // We do this so Cosmos can handle heirarchical page paths
+            id = HttpContext.Request.Path;
             return await GetArticleViewModelAsync(id, lang, false, true);
         }
 
+        /// <summary>
+        /// Gets the children of a given page path.
+        /// </summary>
+        /// <param name="id">UrlPath</param>
+        /// <returns></returns>
+        public async Task<IActionResult> GetTOC(string id, bool orderByPub = false, int pageSize = 10, int pageNo = 0)
+        {
+            var articleLogic = new ArticleLogic(_dbContext, _cosmosOptions);
+            var result = await articleLogic.GetTOC(id, pageNo, pageSize, orderByPub);
+            return Json(result);
+        }
 
         /// <summary>
         /// Gets the page as a JSON result
